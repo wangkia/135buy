@@ -1,0 +1,7 @@
+<!-- pager header -->
+  <!--{insert name="get_header" }-->
+<!-- /pager header -->  
+
+<!-- pager footer -->
+  <!--{insert name="get_footer" }-->
+<!-- /pager footer -->

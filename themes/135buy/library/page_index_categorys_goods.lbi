@@ -1,0 +1,39 @@
+<!-- catefory info -->
+ <!--{foreach from=$index_category_info item=index_category name=index_category_info}-->
+<div class="categoryLine"></div>
+<!-- category info -->
+<div class="container" style="padding-top:10px;" >
+<!-- category name -->
+    <div class="row">
+        <div class="col-lg-2"><h2><!--{$index_category.cat_name}--></h2></div><div class="col-lg-4" style="margin-top:15px"><a href="<!--{$site_url}-->category.php?id=<!--{$index_category.cat_id}-->"><h4><small>点击查看更多</small></h4></a></div>
+    </div>
+<!-- /category name -->
+<!-- category banner -->
+    <div class="banner row">
+        <div class="col-lg-9 delmgn"><img src="http://i2.lifevccdn.com/upload/category_img/banner-29bdbba0-40d8-4852-8c3e-c7c02dd665b4_v140315141343.jpg" width="1170px" /></div>
+    </div>
+<!-- /category banner -->
+<!-- category goods list -->
+    <div class="goods_list row">  
+        <!--{foreach from=$index_category.goods item=goods_info name=index_category_goods_info}-->
+         <!--{if $smarty.foreach.index_category_goods_info.iteration % 3 ==0}-->
+            <div class="goods_info" style="margin-right:0px">
+            <!--{else}-->
+            <div class="goods_info">
+            <!--{/if}-->
+                <a href="<!--{$site_url}--><!--{$goods_info.url}-->" title="<!--{$goods_info.goods_name}-->" target="_blank">         
+                <img src="<!--{$goods_info.goods_img}-->" alt="<!--{$goods_info.goods_name}-->"  style="display: block;">
+                </a>
+                <div class="goods_title"><!--{$goods_info.goods_brief}--></div>
+                <p><span class="activityTag">推荐价:</span><span><strong>￥<!--{$goods_info.shop_price}--></strong></span> &nbsp;<s>￥<!--{$goods_info.market_price}--></s><span class="priceTag">荐</span></p>    
+                <p><span><a title="<!--{$goods_info.goods_name}-->" target="_blank" href="/item/8797"><!--{$goods_info.goods_name}--></a></span></p>
+                <div class=" col-lg-9"> 
+                   <!-- <span class="recentSale">累计售出：7348</span> -->
+                </div>
+            </div>
+        <!--{/foreach}-->
+    </div>
+</div>
+<!-- /category goods list -->
+<!--{/foreach}-->
+<!-- catefory info -->

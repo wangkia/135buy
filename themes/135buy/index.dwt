@@ -1,0 +1,68 @@
+<!-- pager header -->
+  <!--{insert name="get_header" }-->
+<!-- /pager header -->  
+<!-- banner -->
+<div class="container" >
+    <div class="banners_list row">
+        <!--{foreach from=$top_ads item=top_ad name=top_ad}--> 
+            <!--{if $smarty.foreach.top_ad.iteration % 3 ==0}-->
+                <div class="banner_small" style="margin-right:0px">
+            <!--{else}-->
+                <div class="banner_small">
+            <!--{/if}-->
+            <a href="<!--{$top_ad.ad_link}-->" target="_blank">
+                <img src="/data/afficheimg/<!--{$top_ad.ad_code}-->" width="1170px" alt="<!--{$top_ad.ad_name}-->" />
+            </a>
+           </div>         
+        <!--{/foreach}-->
+    </div>
+</div>
+<!-- /banner -->
+</div>
+<!-- new -->
+<div class="container" style="padding-top:10px;" >
+<!-- new title -->
+    <div class="row">
+        <div class="col-lg-2"><h2>天天新品</h2></div><div class="col-lg-4" style="margin-top:15px"><h4><small>点击查看更多</small></h4></div>
+    </div>
+<!-- new title -->
+<!-- new banner -->
+    <div class="banner row">
+        <div class="col-lg-9 delmgn">
+            <!--{foreach from=$best_goods_ads item=best_goods_ad name=best_goods_ad}-->
+                <img src="/data/afficheimg/<!--{$best_goods_ad.ad_code}-->" width="1170px" alt="<!--{$best_goods_ad.ad_link}-->" />
+            <!--{/foreach}-->
+        </div>
+    </div>
+<!-- new banner -->
+<!-- new goods list -->
+    <div class="goods_list row">   
+        <!--{foreach from=$best_goods item=best_good name=best_goods}-->
+            <!--{if $smarty.foreach.best_goods.iteration % 3 ==0}-->
+            <div class="goods_info" style="margin-right:0px">
+            <!--{else}-->
+            <div class="goods_info">
+            <!--{/if}-->
+                <a href="<!--{$site_url}-->goods.php?id=<!--{$best_good.goods_id}-->" title="<!--{$best_good.good_name}-->" target="_blank">         
+                <img src="<!--{$best_good.goods_img}-->" alt="<!--{$best_good.goods_name}-->"  style="display: block;">
+                </a>
+                <div class="goods_title"><!--{$best_good.goods_brief}--></div>
+                <p><span>推荐价:</span><span><strong>￥<!--{$best_good.shop_price}--></strong></span> &nbsp;<s>￥{$best_good.market_price}</s><span class="priceTag">新</span></p>
+                <p><a title="<!--{$best_good.goods_name}-->" target="_blank" href="/item/8797"><!--{$best_good.goods_name}--></a></p>
+                <div class=" col-lg-9"> 
+                   <!-- <span class="recentSale">累计售出：7348</span> -->
+                </div>
+            </div>
+        <!--{/foreach}-->         
+    </div>
+</div>
+<!-- new goods list -->
+<!--/ new -->
+
+<!-- #BeginLibraryItem "/library/page_index_categorys_goods.lbi" --><!-- #EndLibraryItem -->
+
+<!-- pager footer -->
+  <!--{insert name="get_footer" }-->
+<!-- /pager footer -->
+
+    
